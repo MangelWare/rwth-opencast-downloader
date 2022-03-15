@@ -1,0 +1,31 @@
+{
+    "manifest_version": 3,
+    "name": "RWTH Opencast Downloader",
+    "version": "1.0",
+    "description": "Allows to easily download the MP4 video sources of the RWTH OpenCast player embedded in the RWTH Moodle.",
+    "author": "Simon Mangel",
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://engage.streaming.rwth-aachen.de/paella/ui/watch.html**"
+            ],
+            "all_frames": true,
+            "js": [
+                "opencast-inject.js"
+            ]
+        }
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "opencast-inject-inner.js"
+            ],
+            "matches": [
+                "https://*/*"
+            ]
+        }
+    ]
+}
