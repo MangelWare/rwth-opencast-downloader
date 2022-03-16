@@ -2,6 +2,12 @@
     "manifest_version": 3,
     "name": "RWTH Opencast Downloader",
     "version": "1.0",
+    "icons": {
+        "32": "logo_32.png",
+        "48": "logo_48.png",
+        "64": "logo_64.png",
+        "128": "logo_128.png"
+    },
     "description": "Allows to easily download the MP4 video sources of the RWTH OpenCast player embedded in the RWTH Moodle.",
     "author": "Simon Mangel",
     "action": {

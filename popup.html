@@ -1,6 +1,8 @@
 <html>
 
 <head>
+    <meta charset="UTF-8">
+
     <title>RWTH OpenCast Downloader</title>
 
     <link rel="stylesheet" href="popup.css">
@@ -8,13 +10,16 @@
 </head>
 
 <body>
-    <h3>RWTH OpenCast Downloader</h3>
+    <div class="heading">
+        <img class="logo" src="logo.svg">
+        <h3>RWTH OpenCast Downloader</h3>
+    </div>
 
     <script src="popup.js"></script>
 
     <div id="content-placeholder">
-        Aktuell konnten keine Videoquellen gefunden werden.
-        Achte darauf, dass das Video gestartet ist.
+        Es konnten noch keine Videoquellen gefunden werden.
+        Überprüfe, ob das Video abgespielt wird, sonst kann der Downloadlink nicht erkannt werden.
     </div>
     <div id="loading-indicator">
         <div class="lds-ring">
@@ -34,6 +39,10 @@
             <span>1920x1080</span>
         </div>
     -->
+    </div>
+
+    <div style="font-size: small;">
+        Made with ❤️ by <a class="shameless-plug" href="https://github.com/MangelWare" target="_blank">Simon Mangel</a>
     </div>
 
 

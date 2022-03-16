@@ -16,38 +16,43 @@ function getStreams(callback) {
     script.onload = function () {
         _log("onload called!");
         setTimeout(() => {
-            if (document.body.getAttribute('rwthocdl_hrefs') === "not_loaded") {
+            if (document.body.getAttribute('rwthocdl_contents') === "not_loaded") {
                 script.remove();
                 callback(null);
             } else {
-                let hrefs = document.body.getAttribute('rwthocdl_hrefs').split('|');
-                let resolutions = document.body.getAttribute('rwthocdl_res').split(',');
-                let sources = []
-                for (let i = 0; i < hrefs.length; i++) {
-                    const href = hrefs[i];
-                    const resWidth = resolutions[i].split('x')[0];
-                    const resHeight = resolutions[i].split('x')[1];
-                    sources.push({
-                        src: href,
-                        res: {
-                            w: resWidth,
-                            h: resHeight
-                        }
-                    });
-                }
+                let contents = document.body.getAttribute('rwthocdl_contents').split(',');
+                _log(contents)
+                let res = {}
+                contents.forEach((content) => {
+                    let hrefs = document.body.getAttribute(`rwthocdl_${content}_hrefs`).split('|');
+                    let resolutions = document.body.getAttribute(`rwthocdl_${content}_res`).split(',');
+                    res[content] = { sources: [] }
+                    for (let i = 0; i < hrefs.length; i++) {
+                        const href = hrefs[i];
+                        const resWidth = resolutions[i].split('x')[0];
+                        const resHeight = resolutions[i].split('x')[1];
+                        res[content].sources.push({
+                            src: href,
+                            res: {
+                                w: resWidth,
+                                h: resHeight
+                            }
+                        });
+                    }
+                })
 
                 script.remove();
-                callback(sources);
+                callback(res);
             }
 
         }, 100)
     };
 }
 
-getStreams((sources) => { sendResult(sources) });
-setInterval(() => getStreams((sources) => { sendResult(sources) }), 1000);
+getStreams((res) => { sendResult(res) });
+setInterval(() => getStreams((res) => { sendResult(res) }), 1000);
 
-function sendResult(sources) {
+function sendResult(res) {
     _log("Sending result...");
-    chrome.runtime.sendMessage({ sources: sources }).catch((err) => { })
+    chrome.runtime.sendMessage(res).catch((err) => { })
 }

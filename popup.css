@@ -1,10 +1,24 @@
+:root {
+  --main-bg-color: rgb(48, 51, 58);
+}
+
 body {
     width: 250px;
     display: flex;
     flex-direction: column;
     font-size: large;
-    background-color: rgb(48, 51, 58);
+    background-color: var(--main-bg-color);
     color: white;
+}
+
+div.heading {
+  display: flex;
+  align-items: center;
+}
+
+img.logo {
+  height: 2rem;
+  margin-right: 0.5rem;
 }
 
 h3 {
@@ -32,7 +46,8 @@ div.download-option {
 }
 
 .download-btn:hover {
-    background-color: rgb(168, 194, 255);
+    background-color: var(--main-bg-color);
+    color: white;
 }
 
 div#loading-indicator {
@@ -73,4 +88,8 @@ div#loading-indicator {
     100% {
       transform: rotate(360deg);
     }
+  }
+
+  a.shameless-plug {
+    color: white;
   }
