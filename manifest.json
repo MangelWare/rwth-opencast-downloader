@@ -1,14 +1,14 @@
 {
     "manifest_version": 3,
     "name": "RWTH Opencast Downloader",
-    "version": "1.0",
+    "version": "0.0.1",
     "icons": {
         "32": "logo_32.png",
         "48": "logo_48.png",
         "64": "logo_64.png",
         "128": "logo_128.png"
     },
-    "description": "Allows to easily download the MP4 video sources of the RWTH OpenCast player embedded in the RWTH Moodle.",
+    "description": "Allows to easily download the MP4 video sources of the RWTH Opencast player embedded in the RWTH Moodle.",
     "author": "Simon Mangel",
     "action": {
         "default_popup": "popup.html"
@@ -30,7 +30,7 @@
                 "opencast-inject-inner.js"
             ],
             "matches": [
-                "https://*/*"
+                "https://engage.streaming.rwth-aachen.de/*"
             ]
         }
     ]
