@@ -12,7 +12,6 @@ chrome.runtime.onMessage.addListener(
 )
 
 function setState(request) {
-    console.log("Got request:\n" + JSON.stringify(request, null, 2))
     const contentPlaceholder = document.getElementById('content-placeholder')
     const loadingIndicator = document.getElementById('loading-indicator')
     const downloadOptionsDiv = document.getElementById('download-options');
