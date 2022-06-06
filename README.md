@@ -9,7 +9,7 @@ The popup should show the available contents with their resolution. Click on one
 
 ### How does it work?
 
-The extension doen't do anything too involved, such as puzzling together pieces of the video.
+The extension doesn't do anything too involved, such as puzzling together pieces of the video.
 Instead, links to the MP4 files are readily available, if you know where to look.
 
 That is: `window.paella.player.videoContainer.sourceData[...].sources.mp4[...]`
