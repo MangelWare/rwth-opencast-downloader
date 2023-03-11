@@ -16,7 +16,7 @@
     "content_scripts": [
         {
             "matches": [
-                "https://engage.streaming.rwth-aachen.de/paella/ui/watch.html**"
+                "https://engage.streaming.rwth-aachen.de/*paella/ui/watch.html**"
             ],
             "all_frames": true,
             "js": [
