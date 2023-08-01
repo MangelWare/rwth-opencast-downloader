@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "RWTH Opencast Downloader",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "icons": {
         "32": "logo_32.png",
         "48": "logo_48.png",
